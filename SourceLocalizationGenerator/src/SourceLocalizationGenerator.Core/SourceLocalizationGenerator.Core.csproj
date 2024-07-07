@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+
+    <RootNamespace>SourceLocalizationGenerator.Core</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>SourceLocalizationGenerator.Core</PackageId>
+    <Version>1.0.1</Version>
+    <Copyright>© 2024 Alex Kalfakakos</Copyright>
+    <Authors>Alex Kalfakakos</Authors>
+    <PackageReleaseNotes>
+      Initial release
+    </PackageReleaseNotes>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Rekkonnect/SourceLocalizationGenerator/tree/master/SourceLocalizationGenerator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Rekkonnect/SourceLocalizationGenerator/tree/master/SourceLocalizationGenerator</RepositoryUrl>
+    <Description>Core components for SourceLocalizationGenerator</Description>
+    <PackageOutputPath>../../artifacts/Core/</PackageOutputPath>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Garyon" Version="0.3.3" />
+    <PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Garyon" Version="0.3.3"
+                      PrivateAssets="all" GeneratePathProperty="true"/>
+    <PackageReference Include="Dentextist" Version="1.0.1"
+                      PrivateAssets="all" GeneratePathProperty="true"/>
+    <PackageReference Include="RoseLynn.VS2019" Version="0.6.4.1"
+                      PrivateAssets="all" GeneratePathProperty="true"/>
+    <PackageReference Include="RoseLynn.Analyzers.VS2019" Version="0.6.4.1"
+                      PrivateAssets="all" GeneratePathProperty="true"/>
+    <PackageReference Include="RoseLynn.Generators.VS2019" Version="0.6.4.1"
+                      PrivateAssets="all" GeneratePathProperty="true"/>
+
+    <None Include="$(PKGGaryon)\lib\netstandard2.0\*.dll" Pack="true"
+          PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGDentextist)\lib\netstandard2.0\*.dll" Pack="true"
+          PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGRoseLynn_VS2019)\lib\netstandard2.0\*.dll" Pack="true"
+          PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGRoseLynn_Analyzers_VS2019)\lib\netstandard2.0\*.dll" Pack="true"
+          PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGRoseLynn_Generators_VS2019)\lib\netstandard2.0\*.dll" Pack="true"
+          PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+</Project>

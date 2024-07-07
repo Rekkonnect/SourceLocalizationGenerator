@@ -1,0 +1,40 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>SourceLocalizationGenerator</PackageId>
+    <Version>1.0.1</Version>
+    <Copyright>© 2024 Alex Kalfakakos</Copyright>
+    <Authors>Alex Kalfakakos</Authors>
+    <PackageReleaseNotes>
+      Initial release
+    </PackageReleaseNotes>
+
+    <!-- Special properties for analyzer packages. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);NU5128;NU5127</NoWarn>
+
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Rekkonnect/SourceLocalizationGenerator/tree/master/SourceLocalizationGenerator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Rekkonnect/SourceLocalizationGenerator/tree/master/SourceLocalizationGenerator</RepositoryUrl>
+    <Description>A Roslyn source generator for embedding localization strings and efficiently swapping dynamically</Description>
+    <PackageOutputPath>../../artifacts/</PackageOutputPath>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup Label="README reference">
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <Target Name="SetNuSpecProperties" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <NuspecProperties>$(NuspecProperties);Version=$(Version);BaseOutputPath=$(OutputPath);PackageReleaseNotes=$(PackageReleaseNotes);</NuspecProperties>
+    </PropertyGroup>
+  </Target>
+
+</Project>

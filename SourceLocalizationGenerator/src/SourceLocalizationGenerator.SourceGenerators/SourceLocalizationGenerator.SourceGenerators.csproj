@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+    <Nullable>enable</Nullable>
+
+    <RootNamespace>SourceLocalizationGenerator.SourceGenerators</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" PrivateAssets="all" />
+
+    <PackageReference Include="Polyfill" Version="4.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SourceLocalizationGenerator.Core\SourceLocalizationGenerator.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RoseLynn.VS2019" Version="0.6.4.1" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="RoseLynn.Generators.VS2019" Version="0.6.4.1" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="RoseLynn.Analyzers.VS2019" Version="0.6.4.1" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="Dentextist" Version="1.0.1" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="Garyon" Version="0.3.3" GeneratePathProperty="true" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AnalyzerResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnalyzerResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AnalyzerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnalyzerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <Target Name="GetDependencyTargetPaths">
+    <ItemGroup>
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGRoseLynn_VS2019)\lib\netstandard2.0\RoseLynn.VS2019.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGRoseLynn_Generators_VS2019)\lib\netstandard2.0\RoseLynn.Generators.VS2019.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGRoseLynn_Analyzers_VS2019)\lib\netstandard2.0\RoseLynn.Analyzers.VS2019.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGDentextist)\lib\netstandard2.0\Dentextist.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGGaryon)\lib\netstandard2.0\Garyon.dll" IncludeRuntimeDependency="false" />
+    </ItemGroup>
+  </Target>
+
+</Project>

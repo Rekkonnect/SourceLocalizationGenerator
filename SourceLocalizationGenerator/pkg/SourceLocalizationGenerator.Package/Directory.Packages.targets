@@ -1,0 +1,8 @@
+<Project>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/SourceLocalizationGenerator.Core/SourceLocalizationGenerator.Core.csproj" />
+    <ProjectReference Include="../../src/SourceLocalizationGenerator.SourceGenerators/SourceLocalizationGenerator.SourceGenerators.csproj" />
+  </ItemGroup>
+
+</Project>

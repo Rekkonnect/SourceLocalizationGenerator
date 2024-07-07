@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+
+    <IsPackable>false</IsPackable>
+
+    <RootNamespace>SourceLocalizationGenerator.SourceGenerators.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.6.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Garyon" Version="0.3.3" />
+    <PackageReference Include="Gu.Roslyn.Asserts" Version="4.3.0" />
+    <PackageReference Include="RoseLynn.Testing" Version="0.6.4.1" />
+    <PackageReference Include="RoseLynn.Testing.VS2019" Version="0.6.4.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzer.Testing" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.9.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.9.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.NUnit" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.NUnit" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.NUnit" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeRefactoring.Testing.NUnit" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SourceLocalizationGenerator.Core\SourceLocalizationGenerator.Core.csproj" />
+    <ProjectReference Include="..\..\src\SourceLocalizationGenerator.SourceGenerators\SourceLocalizationGenerator.SourceGenerators.csproj" />
+  </ItemGroup>
+
+</Project>
